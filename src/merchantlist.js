@@ -21,20 +21,22 @@ class MerchantList extends React.Component {
 
     this.state = {
       items: [
-        { title: "test", description: "123" },
-        { title: "test1", description: "1234" }
+        { name: "test", category: "123" },
+        { name: "test1", category: "1234" }
       ]
     };
   }
   componentDidMount() {
+    console.log("Tried getting items");
     this.getItems();
   }
 
   getItems() {
-    fetch("http://localhost:8000/api/item/")
+    fetch("http://localhost:8080/merchant/all/")
       .then(results => results.json())
       .then(results => this.setState({ items: results }));
   }
+
   render() {
     return (
       <ul>
@@ -53,8 +55,8 @@ const ContentItem = ({ item }) => (
       <Card>
         <CardImg top width="100%" src={item.image}></CardImg>
         <CardBody>
-          <CardTitle>{item.title}</CardTitle>
-          <CardText>{item.description}</CardText>
+          <CardTitle>{item.name}</CardTitle>
+          <CardText>{item.category}</CardText>
         </CardBody>
       </Card>
     </Col>

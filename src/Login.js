@@ -17,7 +17,7 @@ class Login extends Component {
         <div>
           <TextField
             hintText="Enter your College Rollno"
-            floatingLabelText="Student Id"
+            floatingLabelText="Employee Id"
             onChange={(event, newValue) =>
               this.setState({ username: newValue })
             }
@@ -46,21 +46,21 @@ class Login extends Component {
       password: "",
       menuValue: 1,
       loginComponent: localloginComponent,
-      loginRole: "student"
+      loginRole: "employee"
     };
   }
   componentWillMount() {
     // console.log("willmount prop values",this.props);
     if (this.props.role != undefined) {
-      if (this.props.role == "student") {
-        console.log("in student componentWillMount");
+      if (this.props.role == "employee") {
+        console.log("in employee componentWillMount");
         var localloginComponent = [];
         localloginComponent.push(
           <MuiThemeProvider>
             <div>
               <TextField
                 hintText="Enter your College Rollno"
-                floatingLabelText="Student Id"
+                floatingLabelText="Employee Id"
                 onChange={(event, newValue) =>
                   this.setState({ username: newValue })
                 }
@@ -87,17 +87,17 @@ class Login extends Component {
         this.setState({
           menuValue: 1,
           loginComponent: localloginComponent,
-          loginRole: "student"
+          loginRole: "employee"
         });
-      } else if (this.props.role == "teacher") {
-        console.log("in teacher componentWillMount");
+      } else if (this.props.role == "employer") {
+        console.log("in employer componentWillMount");
         var localloginComponent = [];
         localloginComponent.push(
           <MuiThemeProvider>
             <div>
               <TextField
                 hintText="Enter your College Rollno"
-                floatingLabelText="Teacher Id"
+                floatingLabelText="Employer Id"
                 onChange={(event, newValue) =>
                   this.setState({ username: newValue })
                 }
@@ -124,7 +124,7 @@ class Login extends Component {
         this.setState({
           menuValue: 2,
           loginComponent: localloginComponent,
-          loginRole: "teacher"
+          loginRole: "employer"
         });
       }
     }
@@ -170,13 +170,13 @@ class Login extends Component {
     var loginRole;
     if (value == 1) {
       var localloginComponent = [];
-      loginRole = "student";
+      loginRole = "employee";
       localloginComponent.push(
         <MuiThemeProvider>
           <div>
             <TextField
               hintText="Enter your College Rollno"
-              floatingLabelText="Student Id"
+              floatingLabelText="Employee Id"
               onChange={(event, newValue) =>
                 this.setState({ username: newValue })
               }
@@ -202,13 +202,13 @@ class Login extends Component {
       );
     } else if (value == 2) {
       var localloginComponent = [];
-      loginRole = "teacher";
+      loginRole = "employer";
       localloginComponent.push(
         <MuiThemeProvider>
           <div>
             <TextField
               hintText="Enter your College Rollno"
-              floatingLabelText="Teacher Id"
+              floatingLabelText="Employer Id"
               onChange={(event, newValue) =>
                 this.setState({ username: newValue })
               }
@@ -252,8 +252,8 @@ class Login extends Component {
               value={this.state.menuValue}
               onChange={(event, index, value) => this.handleMenuChange(value)}
             >
-              <MenuItem value={1} primaryText="Student" />
-              <MenuItem value={2} primaryText="Teacher" />
+              <MenuItem value={1} primaryText="Employee" />
+              <MenuItem value={2} primaryText="Employer" />
             </DropDownMenu>
           </div>
         </MuiThemeProvider>

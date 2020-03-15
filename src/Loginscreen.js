@@ -18,20 +18,20 @@ class Loginscreen extends Component {
         <MuiThemeProvider>
           <div>
             <RaisedButton
-              label={"Register as Student"}
+              label={"Register as Employee"}
               primary={true}
               style={style}
-              //   onClick={event => this.handleClick(event, "student")}
+              //   onClick={event => this.handleClick(event, "employee")}
             />
           </div>
         </MuiThemeProvider>
         <MuiThemeProvider>
           <div>
             <RaisedButton
-              label={"Register as Teacher"}
+              label={"Register as Employeer"}
               primary={true}
               style={style}
-              //   onClick={event => this.handleClick(event, "teacher")}
+              //   onClick={event => this.handleClick(event, "employer")}
             />
           </div>
         </MuiThemeProvider>
@@ -43,8 +43,8 @@ class Loginscreen extends Component {
       loginscreen: [],
       loginmessage: "",
       loginButtons: loginButtons,
-      studentbuttonLabel: "Register as Student",
-      teacherbuttonLabel: "Register as Teacher",
+      employeebuttonLabel: "Register as Employee",
+      employerbuttonLabel: "Register as Employeer",
       isLogin: true
     };
   }
@@ -105,20 +105,20 @@ class Loginscreen extends Component {
   //           <MuiThemeProvider>
   //             <div>
   //               <RaisedButton
-  //                 label={"Register as Student"}
+  //                 label={"Register as Employee"}
   //                 primary={true}
   //                 style={style}
-  //                 onClick={event => this.handleClick(event, "student")}
+  //                 onClick={event => this.handleClick(event, "employee")}
   //               />
   //             </div>
   //           </MuiThemeProvider>
   //           <MuiThemeProvider>
   //             <div>
   //               <RaisedButton
-  //                 label={"Register as Teacher"}
+  //                 label={"Register as Employer"}
   //                 primary={true}
   //                 style={style}
-  //                 onClick={event => this.handleClick(event, "teacher")}
+  //                 onClick={event => this.handleClick(event, "employer")}
   //               />
   //             </div>
   //           </MuiThemeProvider>

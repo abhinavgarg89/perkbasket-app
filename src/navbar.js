@@ -4,6 +4,8 @@ import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/Nav";
 import logo from "./logo.png";
 import MerchantList from "./merchantlist";
+import { Button } from "react-bootstrap";
+
 import {
   Route,
   NavLink,
@@ -48,7 +50,7 @@ class NavBarTest extends React.Component {
     return (
       <div>
         <Navbar bg="light" variant="light">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="home">
             <img src={logo} alt="Logo" height="100px" width="100px" />
           </Navbar.Brand>
           <Nav className="mr-auto">
@@ -65,6 +67,10 @@ class NavBarTest extends React.Component {
             <Nav.Link href="merchantHome" activeClassName="active">
               MerchantHome
             </Nav.Link>
+            <Button variant="primary" href="login">
+              Login
+            </Button>{" "}
+            <Button variant="primary">Schedule a Demo</Button>{" "}
           </Nav>
         </Navbar>
       </div>
