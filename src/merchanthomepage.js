@@ -17,24 +17,21 @@ import { Button } from "react-bootstrap";
 const User = ({ match }) => <p>{match.params.id}</p>;
 
 class MerchantHomePage extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      items: [
-        { title: "test", description: "123" },
-        { title: "test1", description: "1234" }
-      ]
+      merchant: { name: "test", category: "123" }
     };
   }
   componentDidMount() {
-    this.getItems();
+    this.getMerchant();
   }
 
-  getItems() {
-    fetch("http://localhost:8000/api/item/")
-      .then(results => results.json())
-      .then(results => this.setState({ items: results }));
+  getMerchant() {
+    // fetch("http://localhost:8080/merchant/get/" + this.props.match.params.id)
+    //   .then(results => results.json())
+    //   .then(results => this.setState({ merchant: results }));
   }
 
   addItem() {
@@ -43,33 +40,26 @@ class MerchantHomePage extends React.Component {
 
   render() {
     return (
+      // <div>
+      //   {/* <h2>{this.props.match.params.id}</h2> */}
+      //   <span>Test</span>
+      //   {/* <ContentItem merchant={this.state.merchant} />; */}
+      //   <Button id="createNewOffering" onclick="addItem">
+      //     Add
+      //   </Button>
+      // </div>
       <div>
-        <ul>
-          {this.state.items.map(function(item, index) {
-            return <ContentItem item={item} key={index} />;
-          })}
-        </ul>
-        <Button id="createNewOffering" onclick="addItem">
-          Add
-        </Button>
+        <h1>This is merchant Home Page</h1>
       </div>
     );
   }
 }
 
-const ContentItem = ({ item }) => (
-  <Row className="ContentItem">
-    <Col xs="3" />
-    <Col xs="12" sm="6">
-      <Card>
-        <CardImg top width="100%" src={item.image}></CardImg>
-        <CardBody>
-          <CardTitle>{item.title}</CardTitle>
-          <CardText>{item.description}</CardText>
-        </CardBody>
-      </Card>
-    </Col>
-  </Row>
+const ContentItem = ({ merchant }) => (
+  <div>
+    <span>{merchant.name}</span>
+    <span>{merchant.category}</span>
+  </div>
 );
 
 ReactDOM.render(<MerchantHomePage />, document.getElementById("root"));

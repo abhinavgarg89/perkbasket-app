@@ -51,24 +51,23 @@ class NavBarTest extends React.Component {
       <div>
         <Navbar bg="light" variant="light">
           <Navbar.Brand href="home">
-            <img src={logo} alt="Logo" height="100px" width="100px" />
+            {/* <img src={logo} alt="Logo" height="100px" width="100px" /> */}
           </Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link href="home" activeClassName="active">
+            <Nav.Link href="/home" activeClassName="active">
               Home
             </Nav.Link>
-            <Nav.Link
-              href="merchantlist"
-              activeClassName="active"
-              to="/merchantlist"
-            >
+            <Nav.Link href="/merchantlist" activeClassName="active">
               Merchants
             </Nav.Link>
-            <Nav.Link href="merchantHome" activeClassName="active">
+            <Nav.Link href="/merchantHome" activeClassName="active">
               MerchantHome
             </Nav.Link>
-            <Button variant="primary" href="login">
+            <Button variant="primary" href="/login">
               Login
+            </Button>{" "}
+            <Button variant="primary" href="/signup">
+              SignUp
             </Button>{" "}
             <Button variant="primary">Schedule a Demo</Button>{" "}
           </Nav>

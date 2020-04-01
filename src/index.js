@@ -17,21 +17,25 @@ import MerchantList from "./merchantlist";
 import MerchantHomePage from "./merchanthomepage";
 import Footer from "./footer";
 import Loginscreen from "./Loginscreen";
+import history from "./history";
+
+import Login from "./components/login.component";
+import SignUp from "./components/signup.component";
 
 const routing = (
-  <Router>
+  <Router history={history}>
     <div>
       <NavBarTest />
-
       <Switch>
         <Route exact path="/" component={App} />
         <Route path="/home" component={App} />
         <Route path="/merchantlist" component={MerchantList} />
-        <Route path="/merchantHome" component={MerchantHomePage} />
-        <Route path="/login" component={Loginscreen} />
+        <Route exact path="/merchantHome/:id" component={MerchantHomePage} />
+        <Route path="/merchantHome" component={MerchantList} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={SignUp} />
         <Route component={Notfound} />
       </Switch>
-
       <Footer />
     </div>
   </Router>
